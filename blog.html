@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 | 서버 웜업 & 구글 상위노출 대행</title>
+    <meta name="description" content="서버 웜업과 구글 상위노출 대행, 마포에서 직접 운영. 우리만의 브루탈 웜업 시스템으로 당신의 사이트를 폭발시키세요. 010-6279-0862">
+    <meta name="keywords" content="서버 웜업, 구글 상위노출 대행, 마포, 구글 상위노출, 웜업 대행, PBN, aegis-warmer, 블로그, SEO">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <link rel="canonical" href="https://sf-t3-1779642675702-189.pages.dev/blog">
+    <!-- OG Meta -->
+    <meta property="og:title" content="서버 웜업 & 구글 상위노출 대행 | 브루탈 웜업 블로그">
+    <meta property="og:description" content="서버 웜업과 구글 상위노출 대행, 마포에서 직접 운영. 우리만의 브루탈 웜업 시스템으로 당신의 사이트를 폭발시키세요.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sf-t3-1779642675702-189.pages.dev/blog">
+    <meta property="og:site_name" content="Aegis Warmer">
+    <meta property="og:locale" content="ko_KR">
+    <style>
+        /* === RESET & BASE === */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            font-family: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        a {
+            color: #ff3c3c;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: #ff6b6b;
+        }
+        ul {
+            list-style: none;
+        }
+        img, svg {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* === DESIGN TOKENS === */
+        :root {
+            --neon-red: #ff3c3c;
+            --neon-blue: #00d4ff;
+            --neon-green: #39ff14;
+            --bg-void: #0a0a0a;
+            --bg-card: #1a1a1a;
+            --text-primary: #e0e0e0;
+            --text-muted: #8a8a8a;
+            --border-brutal: 4px solid var(--neon-red);
+            --border-glow: 0 0 12px rgba(255, 60, 60, 0.4);
+            --font-heading: 'Inter', sans-serif;
+            --font-body: 'Noto Sans KR', sans-serif;
+        }
+
+        /* === TYPOGRAPHY (BRUTAL OVERSIZE) === */
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            color: var(--neon-red);
+            text-shadow: var(--border-glow);
+        }
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            border-left: var(--border-brutal);
+            padding-left: 1rem;
+        }
+        h3 {
+            font-size: clamp(1.3rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        p, li, blockquote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--text-primary);
+        }
+        .small-text {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+        .accent-text {
+            color: var(--neon-blue);
+            font-weight: 700;
+        }
+
+        /* === LAYOUT === */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        /* nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #2a2a2a;
+            position: relative;
+        }
+        nav .logo a {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--neon-red);
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+        }
+        nav ul {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        nav ul li a {
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        nav ul li a:hover {
+            border-bottom-color: var(--neon-red);
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            width: 30px;
+            height: 22px;
+            justify-content: space-between;
+        }
+        .hamburger-menu span {
+            display: block;
+            height: 3px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s;
+        }
+        /* responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background: var(--bg-void);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem;
+                border-bottom: var(--border-brutal);
+                gap: 1rem;
+                z-index: 100;
+            }
+            nav ul.active {
+                display: flex;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+            .tel-link {
+                margin-top: 1rem;
+                display: inline-block;
+                border: 2px solid var(--neon-red);
+                padding: 0.5rem 1.5rem;
+                font-weight: 700;
+                text-align: center;
+            }
+        }
+        .tel-link {
+            border: 2px solid var(--neon-red);
+            padding: 0.4rem 1.2rem;
+            font-weight: 700;
+            transition: all 0.2s;
+        }
+        .tel-link:hover {
+            background: var(--neon-red);
+            color: #000;
+        }
+
+        /* === PAGE SPECIFIC: BLOG ARTICLE === */
+        .blog-article {
+            padding: 4rem 0;
+        }
+        .blog-article header {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .blog-article header h1 {
+            margin-bottom: 1rem;
+        }
+        .blog-article header .meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .blog-article .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .blog-article .content p {
+            margin-bottom: 1.5rem;
+        }
+        .blog-article .content blockquote {
+            border-left: var(--border-brutal);
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 0;
+        }
+        .blog-article .content .highlight {
+            background: rgba(255, 60, 60, 0.1);
+            padding: 2rem;
+            border: 1px solid var(--neon-red);
+            margin: 2rem 0;
+        }
+        .blog-article .footer-cta {
+            margin-top: 4rem;
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid #2a2a2a;
+        }
+        .blog-article .footer-cta a {
+            display: inline-block;
+            background: var(--neon-red);
+            color: #000;
+            font-weight: 800;
+            padding: 0.8rem 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+        .blog-article .footer-cta a:hover {
+            background: transparent;
+            color: var(--neon-red);
+            border-color: var(--neon-red);
+        }
+
+        /* footer minimal */
+        footer {
+            padding: 2rem 0;
+            border-top: 1px solid #1a1a1a;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        footer a {
+            color: var(--neon-red);
+        }
+
+        /* additional brutal touches */
+        .section-title {
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        hr {
+            border: none;
+            border-top: 2px solid var(--neon-red);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="container">
+        <div class="logo">
+            <a href="/">AEGIS WARMER</a>
+        </div>
+        <ul id="nav-links">
+            <li><a href="/">홈</a></li>
+            <li><a href="/about">소개</a></li>
+            <li><a href="/service">서비스</a></li>
+            <li><a href="/blog">블로그</a></li>
+            <li><a href="/contact">문의</a></li>
+            <li><a href="tel:010-6279-0862" class="tel-link">010-6279-0862</a></li>
+        </ul>
+        <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Blog Article -->
+    <main class="blog-article container">
+        <article>
+            <header>
+                <h1>왜 전통적인 SEO는 죽었는가</h1>
+                <div class="meta">
+                    <span>2025.03.20</span>
+                    <span>|</span>
+                    <span>서버 웜업 &middot; 브루탈 전략</span>
+                    <span>|</span>
+                    <span>읽는 시간 3분</span>
+                </div>
+                <p class="small-text" style="margin-top: 1rem;">#구글상위노출 #서버웜업 #PBN #마포</p>
+            </header>
+
+            <div class="content">
+                <p>너는 지금도 <strong>키워드 채우기</strong> 하고 있냐? 구글은 이미 너를 읽었다. 진짜 문제는 <em>봇이 아닌 인간</em>이 네 사이트를 믿지 않는다는 거야. 우리는 그걸 <strong>폭발적으로</strong> 바꾼다.</p>
+
+                <p>서버 웜업. 들어는 봤지? 하지만 아무도 제대로 말해주지 않았을 거야. 새 도메인은 구글에게 '의심스러운 놈'일 뿐이다. 우리는 <span class="accent-text">Aegis Warmer</span>로 그 의심을 <strong>분쇄</strong>한다. 마포에서 직접 굴리는 PBN 네트워크, 24시간 웜업, 그리고 네 사이트에 권위를 부여하는 <em>brutalist 방식</em>.</p>
+
+                <blockquote>
+                    "키워드 스터핑? 그건 2010년에나 통했어. 지금은 <strong>신뢰</strong>와 <strong>속도</strong>가 전부다. 우리는 그 두 가지를 동시에 때린다."
+                </blockquote>
+
+                <p>생각해봐. 네 사이트가 0.3초 만에 로딩되고, 50개의 고품질 PBN이 동시에 너를 가리키며, 서버 응답 시간이 밀리초 단위로 튀는 상황을. 그게 <strong>브루탈 웜업</strong>이다. 우리는 마포에 있는 서버팜에서 직접 이걸 운영한다. 네가 자는 동안에도 봇은 우리 신호를 읽고 있다.</p>
+
+                <div class="highlight">
+                    <h3 style="color: var(--neon-red); margin-bottom: 0.5rem;">💀 구글 상위노출 대행, 이렇게 작동한다</h3>
+                    <ul>
+                        <li>✅ <strong>서버 웜업</strong> — 새 도메인을 노화시켜 신뢰도 폭발</li>
+                        <li>✅ <strong>PBN 네트워크</strong> — 100% 국내 서버, 마포 직접 관리</li>
+                        <li>✅ <strong>데이터 기반</strong> — 실시간 트래픽 패턴 분석, 구글 알고리즘 역이용</li>
+                        <li>✅ <strong>결과 보장</strong> — 30일 내 상위 노출 시작, 안 되면 100% 환불</li>
+                    </ul>
+                </div>
+
+                <p>너는 지금 두 가지 선택지 앞에 서 있다. 계속 구글에 무시당하거나, 아니면 <strong>전화를 건다</strong>. 우리는 마포에서 직접 너의 사이트를 <span class="accent-text">폭발</span>시킬 준비가 되어 있다. 010-6279-0862. 이 번호가 너의 SEO 인생을 바꿀 거다.</
+</body>
+</html>
