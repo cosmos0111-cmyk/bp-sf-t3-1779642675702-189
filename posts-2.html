@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>글 목록 (2/2) · sf-t3-1779642675702-189</title>
+  <meta name="description" content="sf-t3-1779642675702-189에 올라온 글 목록입니다.">
+  <link rel="canonical" href="https://sf-t3-1779642675702-189.maphoshirts.today/posts-2.html">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <style>
+ /* === RESET & BASE === */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ scroll-behavior: smooth;
+ -webkit-text-size-adjust: 100%;
+ }
+ body {
+ font-family: 'Inter', 'Noto Sans KR', system-ui, sans-serif;
+ background: #0a0a0a;
+ color: #e0e0e0;
+ line-height: 1.6;
+ min-height: 100vh;
+ }
+ a {
+ color: #ff3c3c;
+ text-decoration: none;
+ transition: color 0.2s;
+ }
+ a:hover {
+ color: #ff6b6b;
+ }
+ ul {
+ list-style: none;
+ }
+ img, svg {
+ max-width: 100%;
+ display: block;
+ }
+
+ /* === DESIGN TOKENS === */
+ :root {
+ --neon-red: #ff3c3c;
+ --neon-blue: #00d4ff;
+ --neon-green: #39ff14;
+ --bg-void: #0a0a0a;
+ --bg-card: #1a1a1a;
+ --text-primary: #e0e0e0;
+ --text-muted: #8a8a8a;
+ --border-brutal: 4px solid var(--neon-red);
+ --border-glow: 0 0 12px rgba(255, 60, 60, 0.4);
+ --font-heading: 'Inter', sans-serif;
+ --font-body: 'Noto Sans KR', sans-serif;
+ }
+
+ /* === TYPOGRAPHY (BRUTAL OVERSIZE) === */
+ h1 {
+ font-size: clamp(2.5rem, 8vw, 5rem);
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.04em;
+ line-height: 0.9;
+ color: var(--neon-red);
+ text-shadow: var(--border-glow);
+ }
+ h2 {
+ font-size: clamp(1.8rem, 5vw, 3rem);
+ font-weight: 800;
+ letter-spacing: -0.02em;
+ line-height: 1.1;
+ margin-bottom: 1rem;
+ border-left: var(--border-brutal);
+ padding-left: 1rem;
+ }
+ h3 {
+ font-size: clamp(1.3rem, 3vw, 2rem);
+ font-weight: 700;
+ margin-bottom: 0.5rem;
+ }
+ p, li, blockquote {
+ font-size: 1.1rem;
+ line-height: 1.7;
+ color: var(--text-primary);
+ }
+ .small-text {
+ font-size: 0.85rem;
+ color: var(--text-muted);
+ text-transform: uppercase;
+ letter-spacing: 0.08em;
+ }
+ .accent-text {
+ color: var(--neon-blue);
+ font-weight: 700;
+ }
+
+ /* === LAYOUT === */
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 1.5rem;
+ }
+ /* nav */
+ nav {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 1.5rem 0;
+ border-bottom: 1px solid #2a2a2a;
+ position: relative;
+ }
+ nav .logo a {
+ font-size: 1.8rem;
+ font-weight: 900;
+ color: var(--neon-red);
+ text-transform: uppercase;
+ letter-spacing: -0.03em;
+ }
+ nav ul {
+ display: flex;
+ gap: 2rem;
+ align-items: center;
+ }
+ nav ul li a {
+ font-weight: 600;
+ text-transform: uppercase;
+ font-size: 0.9rem;
+ letter-spacing: 0.1em;
+ padding: 0.3rem 0;
+ border-bottom: 2px solid transparent;
+ transition: border-color 0.2s;
+ }
+ nav ul li a:hover {
+ border-bottom-color: var(--neon-red);
+ }
+ .hamburger-menu {
+ display: none;
+ flex-direction: column;
+ cursor: pointer;
+ width: 30px;
+ height: 22px;
+ justify-content: space-between;
+ }
+ .hamburger-menu span {
+ display: block;
+ height: 3px;
+ background: var(--text-primary);
+ border-radius: 2px;
+ transition: all 0.3s;
+ }
+ /* responsive */
+ @media (max-width: 768px) {
+ nav ul {
+ display: none;
+ flex-direction: column;
+ background: var(--bg-void);
+ position: absolute;
+ top: 100%;
+ left: 0;
+ width: 100%;
+ padding: 1.5rem;
+ border-bottom: var(--border-brutal);
+ gap: 1rem;
+ z-index: 100;
+ }
+ nav ul.active {
+ display: flex;
+ }
+ .hamburger-menu {
+ display: flex;
+ }
+ .tel-link {
+ margin-top: 1rem;
+ display: inline-block;
+ border: 2px solid var(--neon-red);
+ padding: 0.5rem 1.5rem;
+ font-weight: 700;
+ text-align: center;
+ }
+ }
+ .tel-link {
+ border: 2px solid var(--neon-red);
+ padding: 0.4rem 1.2rem;
+ font-weight: 700;
+ transition: all 0.2s;
+ }
+ .tel-link:hover {
+ background: var(--neon-red);
+ color: #000;
+ }
+
+ /* === PAGE SPECIFIC: BLOG ARTICLE === */
+ .blog-article {
+ padding: 4rem 0;
+ }
+ .blog-article header {
+ margin-bottom: 3rem;
+ text-align: center;
+ }
+ .blog-article header h1 {
+ margin-bottom: 1rem;
+ }
+ .blog-article header .meta {
+ font-size: 0.95rem;
+ color: var(--text-muted);
+ display: flex;
+ justify-content: center;
+ gap: 1.5rem;
+ flex-wrap: wrap;
+ }
+ .blog-article .content {
+ max-width: 800px;
+ margin: 0 auto;
+ }
+ .blog-article .content p {
+ margin-bottom: 1.5rem;
+ }
+ .blog-article .content blockquote {
+ border-left: var(--border-brutal);
+ padding-left: 1.5rem;
+ margin: 2rem 0;
+ font-style: italic;
+ background: var(--bg-card);
+ padding: 1.5rem;
+ border-radius: 0;
+ }
+ .blog-article .content .highlight {
+ background: rgba(255, 60, 60, 0.1);
+ padding: 2rem;
+ border: 1px solid var(--neon-red);
+ margin: 2rem 0;
+ }
+ .blog-article .footer-cta {
+ margin-top: 4rem;
+ text-align: center;
+ padding: 2rem;
+ border-top: 1px solid #2a2a2a;
+ }
+ .blog-article .footer-cta a {
+ display: inline-block;
+ background: var(--neon-red);
+ color: #000;
+ font-weight: 800;
+ padding: 0.8rem 2.5rem;
+ text-transform: uppercase;
+ letter-spacing: 0.1em;
+ transition: all 0.2s;
+ border: 2px solid transparent;
+ }
+ .blog-article .footer-cta a:hover {
+ background: transparent;
+ color: var(--neon-red);
+ border-color: var(--neon-red);
+ }
+
+ /* footer minimal */
+ footer {
+ padding: 2rem 0;
+ border-top: 1px solid #1a1a1a;
+ text-align: center;
+ color: var(--text-muted);
+ font-size: 0.85rem;
+ }
+ footer a {
+ color: var(--neon-red);
+ }
+
+ /* additional brutal touches */
+ .section-title {
+ font-size: 2rem;
+ font-weight: 900;
+ text-transform: uppercase;
+ letter-spacing: -0.02em;
+ }
+ hr {
+ border: none;
+ border-top: 2px solid var(--neon-red);
+ margin: 2rem 0;
+ }
+ </style>
+  <meta property="og:title" content="글 목록 (2/2) · sf-t3-1779642675702-189">
+  <meta property="og:description" content="sf-t3-1779642675702-189에 올라온 글 목록입니다.">
+  <meta property="og:url" content="https://sf-t3-1779642675702-189.maphoshirts.today/posts-2.html">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+</head>
+<body>
+  <div class="container">
+    <header>
+ <h1>왜 전통적인 SEO는 죽었는가</h1>
+ <div class="meta">
+ <span>2025.03.20</span>
+ 
+ <span>서버 웜업 &middot; 브루탈 전략</span>
+ 
+ <span>읽는 시간 3분</span>
+ </div>
+ <p class="small-text" style="margin-top: 1rem;">#구글상위노출 #서버웜업 #PBN #마포</p>
+ </header>
+    <main>
+      <h1>글 목록</h1>
+      <p>전체 33개 · 2/2 페이지</p>
+      <ul class="post-list">
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0444.html">구글 상위노출 대행 전문가가 말하는 셔츠룸 사이트 정보 비교 기준</a>
+        <p class="post-item__summary">수많은 정보 속에서 당신은 어떤 기준으로 신뢰할 만한 업체를 선택하고 계신가요? 단순히 상단에 노출된다는 이유만으로 해당 정보를 무조건적으로 신뢰하는 것은 매우 위험할 수 있습니다. 셔츠룸 이용을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260721-0445.html">구글 상위노출 대행 전략으로 살펴본 마포 코인노래방 방음 시설 비교 가이드</a>
+        <p class="post-item__summary">디지털 환경에서 마케팅 전략을 세우는 것과 오프라인 공간의 품질을 관리하는 것은 의외로 닮은 점이 많습니다. 구글 상위노출 대행 서비스를 고민할 때도 핵심 가치를 파악해야 하듯, 노래방을 선택할 때</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0100.html">화곡 셔츠룸 운영 방식과 비교하는 구글 상위노출 대행 마곡 가라오케 추천정보</a>
+        <p class="post-item__summary">혹시 여러분은 제대로 된 업체를 선정하기 위해 인터넷 검색 결과를 무조건 신뢰하고 계시지는 않습니까. 특정 서비스가 구글 상위노출 대행을 통해 홍보되고 있다는 사실을 인지하고, 그것이 실제 품질을 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0101.html">구글 상위노출 대행 서비스를 통한 마곡 유흥 추천정보 확인하는 방법</a>
+        <p class="post-item__summary">디지털 환경에서 마곡 지역의 유흥 업소를 찾기 위해 구글 상위노출 대행 검색 결과를 활용하는 사례가 늘고 있습니다. 다만 검색 상단에 배치된 정보라고 해서 무조건 신뢰하는 것은 지양해야 합니다. 사</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0102.html">구글 상위노출 대행 정보 활용해 합정 노래방 추천정보와 가격 비교하기</a>
+        <p class="post-item__summary">합정 인근에서 노래방을 검색할 때 구글 상위노출 대행 업체가 최적화한 홍보 글을 흔히 발견하게 됩니다. 이때 사용자는 서비스의 질과 가격 사이에서 두 가지 대조적인 선택지 사이를 고민하게 됩니다. </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0103.html">구글 상위노출 대행 결과로 보는 연남 클럽 추천정보 이용 예약 가이드</a>
+        <p class="post-item__summary">연남 지역 클럽을 찾기 위해 구글 상위노출 대행 작업을 거친 콘텐츠를 검색하는 이용자가 많습니다. 많은 방문객이 충분한 정보 없이 현장을 찾았다가 입장 제한이나 만석으로 헛걸음하는 실패를 겪곤 합니</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0104.html">구글 상위노출 대행 정보로 확인하는 합정 셔츠룸 추천정보 및 위치성</a>
+        <p class="post-item__summary">합정에서 셔츠룸을 찾으시는 분들은 구글 상위노출 대행 검색 결과를 통해 다양한 선택지를 접하게 됩니다. 단순한 광고성 문구에 의존하기보다 실제 이용을 위한 필수 확인 항목을 체크리스트로 만드는 것이</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0105.html">구글 상위노출 대행 서비스를 찾는 이들을 위한 공덕 가라오케 이용 팁</a>
+        <p class="post-item__summary">비즈니스 미팅을 마친 뒤 거래처 관계자와 함께 자리를 옮기려는 상황은 많은 직장인에게 익숙한 풍경입니다. 구글 상위노출 대행 키워드를 검색하며 온라인 정보를 살피는 분들이 늘어난 만큼, 오프라인 장</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0106.html">구글 상위노출 대행 업계가 주목하는 상수 마사지 활용법과 시간 선정</a>
+        <p class="post-item__summary">흔히 마사지 샵은 밤늦게 방문해야만 피로가 풀린다는 편견을 가진 분들이 많습니다. 하지만 구글 상위노출 대행 관련 콘텐츠를 제작하는 전문가들의 견해를 빌려보면, 이는 업체 운영 방식에 따라 다를 수</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0107.html">구글 상위노출 대행 전략처럼 확실한 망원 노래방 인원별 구성법</a>
+        <p class="post-item__summary">노래방을 예약할 때는 방문하는 인원의 성격과 규모를 먼저 정의해야 합니다. 구글 상위노출 대행 프로세스가 검색 알고리즘을 고려하듯, 공간의 크기나 음향 장비의 성능이 인원수에 부합하는지 따져봐야 합</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0108.html">구글 상위노출 대행업체만큼 꼼꼼하게 홍대 노래방 비교하는 기준</a>
+        <p class="post-item__summary">여러분은 평소 홍대에서 노래방을 선택할 때 어떤 기준을 가장 중요하게 생각하시나요? 구글 상위노출 대행 업무를 수행하며 데이터를 분석하듯, 노래방 역시 가격, 위치, 서비스 품질이라는 지표를 객관적</p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0109.html">구글 상위노출 대행 서비스를 통해 알아보는 공덕 셔츠룸 추천정보 탐색법</a>
+        <p class="post-item__summary">온라인에서 특정 정보를 검색할 때 구글 상위노출 대행 결과만을 맹신하는 것은 위험한 선택이 될 수 있습니다. 공덕 지역의 셔츠룸을 찾으려는 이용자라면 먼저 검색 결과의 상단에 노출된 콘텐츠가 단순 </p>
+      </li>
+      <li class="post-item">
+        <a class="post-item__link" href="posts/gemini-coverage-20260722-0110.html">구글 상위노출 대행 분석으로 비교하는 연남 유흥 추천정보 가격 기준</a>
+        <p class="post-item__summary">디지털 마케팅 업계의 구글 상위노출 대행 방식은 소비자에게 특정 업체만을 강조하는 경향이 있어 주의가 필요합니다. 연남 지역에서 유흥을 즐기려는 사람들은 광고성 게시물과 진정성 있는 후기를 구별하는</p>
+      </li>
+      </ul>
+    <nav class="pager">
+      <a class="pager__link" href="posts.html">1</a>
+      <span class="pager__current">2</span>
+    </nav>
+    </main>
+  </div>
+</body>
+</html>
